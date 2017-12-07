@@ -1770,7 +1770,7 @@ var ZYFILE = {
 					html += '		</div>';
 					html += '	</a>';
 					html += '	<p id="uploadProgress_'+file.index+'" class="file_progress"></p>';
-					html += '	<p id="uploadFailure_'+file.index+'" class="file_failure">上传失败，请重试</p>';
+					html += '	<p id="uploadFailure_'+file.index+'" class="file_failure"></p>';
 					html += '	<p id="uploadTailor_'+file.index+'" class="file_tailor" tailor="false">裁剪完成</p>';
 					html += '	<p id="uploadSuccess_'+file.index+'" class="file_success"></p>';
 					html += '</div>';
@@ -1789,7 +1789,7 @@ var ZYFILE = {
 					html += '		</div>';
 					html += '	</a>';
 					html += '	<p id="uploadProgress_'+file.index+'" class="file_progress"></p>';
-					html += '	<p id="uploadFailure_'+file.index+'" class="file_failure">上传失败，请重试</p>';
+					html += '	<p id="uploadFailure_'+file.index+'" class="file_failure"></p>';
 					html += '	<p id="uploadSuccess_'+file.index+'" class="file_success"></p>';
 					html += '</div>';
 				}
@@ -1956,6 +1956,9 @@ var ZYFILE = {
 					onDelete: function(file, files) {
 						para.onDelete(file, files);  // 回调方法
 						// 移除效果
+                        var removeFile = document.getElementById('fileImage');
+                        removeFile.value = ''; //虽然file的value不能设为有字符的值，但是可以设置为空值
+						//$("#fileImage").files.val(null);
 						$("#uploadList_" + file.index).fadeOut();
 						// 重新设置统计栏信息
 						self.funSetStatusInfo(files);
@@ -1988,7 +1991,7 @@ var ZYFILE = {
 					onFailure: function(file, response) {
 						para.onFailure(file, response);  // 回调方法
 						$("#uploadProgress_" + file.index).hide();
-						$("#uploadSuccess_" + file.index).show();
+						$("#uploadFailure_" + file.index).show();
 						if($("#uploadTailor_"+file.index).length>0){
 							$("#uploadTailor_" + file.index).hide();
 						}
