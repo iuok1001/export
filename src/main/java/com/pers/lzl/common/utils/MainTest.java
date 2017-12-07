@@ -6,7 +6,7 @@ import java.util.Map;
 public class MainTest {
     public static void main(String[] args) {
         Map map = new HashMap();
-        map.put("name","刘志樑");
+        map.put("name","开心狗");
         map.put(1,1);
         System.out.println(map);
     }

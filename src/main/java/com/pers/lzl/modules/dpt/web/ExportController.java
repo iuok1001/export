@@ -117,6 +117,18 @@ public class ExportController {
     }
 
     /**
+     * 图片文件上传
+     * @param model
+     * @return
+     */
+    @RequestMapping(value = "upload")
+    public String upload(Map<String, Object> model) {
+        model.put("title", "upload pictures");
+        return "upload";
+    }
+
+
+    /**
      * 根据文件链接把文件下载下来
      * @param
      * @return

@@ -5,8 +5,7 @@
 <html>
 <head>
     <title>${title}</title>
-    <%--<script type="text/javascript" src="${pageContext.request.contextPath}/static/jQuery/jquery-1.8.3.min.js"></script>--%>
-    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/jquery-1.8.3.min.js"></script>
     <script type="text/javascript">
         var isCheckAll = false;
         function swapCheck() {
