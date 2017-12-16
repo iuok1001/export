@@ -21,7 +21,7 @@
                 fileType         :   ["jpg","png","txt","js","exe"],// 上传文件的类型
                 fileSize         :   51200000,                // 上传文件的大小
                 multiple         :   true,                    // 是否可以多个文件上传
-                tailor           :   true,                    // 是否可以裁剪图片
+                tailor           :   false,                    // 是否可以裁剪图片
                 del              :   true,                    // 是否可以删除文件
                 finishDel        :   false,  				  // 是否在上传文件完成后删除预览
                 // 用户自定义附带值
